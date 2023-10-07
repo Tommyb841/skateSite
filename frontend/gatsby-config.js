@@ -1,6 +1,6 @@
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`
-});
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 /**
  * Configure your Gatsby site with this file.
@@ -11,13 +11,23 @@ require("dotenv").config({
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
- const strapiConfig = {
+const strapiConfig = {
   apiURL: `http://localhost:1337`,
   accessToken: process.env.STRAPI_API_TOKEN,
-    collectionTypes: ["deck"], // Change these to your Strapi content types
-        singleTypes: [], // Use this for single types
-        // queryLimit: 1000, // Default is 100
- }
+  collectionTypes: [
+    {
+      singularName: "deck",
+      queryParams: {
+        populate: {
+          image: "*",
+          images: "*",
+        },
+      },
+    },
+  ], // Change these to your Strapi content types
+  singleTypes: [], // Use this for single types
+  // queryLimit: 1000, // Default is 100
+}
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -28,7 +38,7 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-source-strapi`,
-      options: strapiConfig
+      options: strapiConfig,
     },
     `gatsby-plugin-image`,
     {
