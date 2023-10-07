@@ -4,7 +4,8 @@
   "info": {
     "singularName": "deck",
     "pluralName": "decks",
-    "displayName": "deck"
+    "displayName": "deck",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,12 +22,12 @@
       "default": 39.99
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": true,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

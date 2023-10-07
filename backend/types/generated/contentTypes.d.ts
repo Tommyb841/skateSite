@@ -368,6 +368,7 @@ export interface ApiDeckDeck extends Schema.CollectionType {
     singularName: 'deck';
     pluralName: 'decks';
     displayName: 'deck';
+    description: '';
   };
   options: {
     draftAndPublish: true;
