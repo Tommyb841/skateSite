@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "decks",
+  "info": {
+    "singularName": "deck",
+    "pluralName": "decks",
+    "displayName": "deck"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true,
+      "default": 39.99
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}
